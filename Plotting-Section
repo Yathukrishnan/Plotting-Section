@@ -1,0 +1,37 @@
+# Create subplots for training and testing loss and accuracy
+plt.figure(figsize=(16, 12))
+
+# 1. Training Accuracy Comparison
+plt.subplot(2, 2, 1)
+plt.bar(['LSTM', 'GRU', 'Simple RNN'], [lacc, gacc, sacc], color=['blue', 'orange', 'green'])
+plt.ylim(0, 1)
+plt.title('Training Accuracy Comparison')
+plt.ylabel('Accuracy')
+plt.xlabel('Models')
+
+# 2. Training Loss Comparison
+plt.subplot(2, 2, 2)
+plt.bar(['LSTM', 'GRU', 'Simple RNN'], [lloss, gloss, sloss], color=['blue', 'orange', 'green'])
+plt.ylim(0, 1)
+plt.title('Training Loss Comparison')
+plt.ylabel('Loss')
+plt.xlabel('Models')
+
+# 3. Testing Accuracy Comparison
+plt.subplot(2, 2, 3)
+plt.bar(['LSTM', 'GRU', 'Simple RNN'], [ltest_acc, gtest_acc, stest_acc], color=['blue', 'orange', 'green'])
+plt.ylim(0, 1)
+plt.title('Testing Accuracy Comparison')
+plt.ylabel('Accuracy')
+plt.xlabel('Models')
+
+# 4. Testing Loss Comparison
+plt.subplot(2, 2, 4)
+plt.bar(['LSTM', 'GRU', 'Simple RNN'], [ltest_loss, gtest_loss, stest_loss], color=['blue', 'orange', 'green'])
+plt.ylim(0, 1)
+plt.title('Testing Loss Comparison')
+plt.ylabel('Loss')
+plt.xlabel('Models')
+
+plt.tight_layout()
+plt.show()
